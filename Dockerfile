@@ -1,4 +1,4 @@
-FROM telegraf:1.3.2
+FROM telegraf:1.5.2
 ADD telegraf.conf /etc/telegraf/
 
 ENV INFLUXDB_URL=http://influxdb:8086 \
@@ -10,6 +10,7 @@ ENV INFLUXDB_URL=http://influxdb:8086 \
 	INFLUXDB_WRITE_CONSISTENCY=any \
 	DOCKER_ENDPOINT=unix:///var/run/docker.sock \
 	DOCKER_TIMEOUT=5s \
+	DOCKER_GATHER_SERVICES=true \
 	DOCKER_PERDEVICE=true \
 	DOCKER_TOTAL=true \
 	AGENT_INTERVAL=10s \
