@@ -1,4 +1,4 @@
-FROM telegraf:1.5.2
+FROM telegraf:1.3.2
 ADD telegraf.conf /etc/telegraf/
 
 ENV INFLUXDB_URL=http://influxdb:8086 \
